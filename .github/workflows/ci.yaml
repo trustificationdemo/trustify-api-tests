@@ -1,0 +1,20 @@
+name: CI (repo level)
+
+on:
+  push:
+    branches:
+      - main
+      - "release-*"
+  pull_request:
+    branches:
+      - main
+      - "release-*"
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      ## TODO add any checks this repo might need like formating for instance
